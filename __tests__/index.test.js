@@ -75,6 +75,7 @@ describe('index.js', () => {
             name: req.body.name.value,
             avatar: {
               mimetype: req.body.avatar.mimetype,
+              ext: req.body.avatar.ext,
             },
           },
         }),
@@ -174,6 +175,7 @@ describe('index.js', () => {
             name: req.body.name.value,
             avatars: req.body.avatars.map(avatar => ({
               mimetype: avatar.mimetype,
+              ext: avatar.ext,
             })),
           },
         }),
@@ -306,6 +308,7 @@ describe('index.js', () => {
             name: 'Vuong Tru',
             avatar: {
               mimetype: 'image/jpeg',
+              ext: 'jpg',
             },
           },
         });
@@ -330,6 +333,7 @@ describe('index.js', () => {
             name: 'Vuong Tru',
             avatar: {
               mimetype: '',
+              ext: '',
             },
           },
         });
@@ -438,8 +442,8 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatars: [
-              { mimetype: 'image/jpeg' },
-              { mimetype: 'image/jpeg' },
+              { mimetype: 'image/jpeg', ext: 'jpg' },
+              { mimetype: 'image/jpeg', ext: 'jpg' },
             ],
           },
         });
@@ -464,8 +468,8 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatars: [
-              { mimetype: '' },
-              { mimetype: '' },
+              { mimetype: '', ext: '' },
+              { mimetype: '', ext: '' },
             ],
           },
         });
