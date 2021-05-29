@@ -75,6 +75,7 @@ describe('index.js', () => {
             name: req.body.name.value,
             avatar: {
               mimetype: req.body.avatar.mimetype,
+              mime: req.body.avatar.mime,
               ext: req.body.avatar.ext,
             },
           },
@@ -175,6 +176,7 @@ describe('index.js', () => {
             name: req.body.name.value,
             avatars: req.body.avatars.map(avatar => ({
               mimetype: avatar.mimetype,
+              mime: avatar.mime,
               ext: avatar.ext,
             })),
           },
@@ -307,7 +309,8 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatar: {
-              mimetype: 'image/jpeg',
+              mimetype: 'fake',
+              mime: 'image/jpeg',
               ext: 'jpg',
             },
           },
@@ -332,7 +335,8 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatar: {
-              mimetype: '',
+              mimetype: 'application/javascript',
+              mime: '',
               ext: '',
             },
           },
@@ -442,8 +446,16 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatars: [
-              { mimetype: 'image/jpeg', ext: 'jpg' },
-              { mimetype: 'image/jpeg', ext: 'jpg' },
+              {
+                mimetype: 'fake',
+                mime: 'image/jpeg',
+                ext: 'jpg',
+              },
+              {
+                mimetype: 'super-fake',
+                mime: 'image/jpeg',
+                ext: 'jpg',
+              },
             ],
           },
         });
@@ -468,8 +480,16 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatars: [
-              { mimetype: '', ext: '' },
-              { mimetype: '', ext: '' },
+              {
+                mimetype: 'application/javascript',
+                mime: '',
+                ext: '',
+              },
+              {
+                mimetype: 'application/javascript',
+                mime: '',
+                ext: '',
+              },
             ],
           },
         });
