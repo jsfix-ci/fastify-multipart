@@ -334,11 +334,7 @@ describe('index.js', () => {
         expect(response.json()).toEqual({
           data: {
             name: 'Vuong Tru',
-            avatar: {
-              mimetype: 'application/javascript',
-              mime: '',
-              ext: '',
-            },
+            avatar: { mimetype: 'application/javascript' },
           },
         });
       });
@@ -480,16 +476,8 @@ describe('index.js', () => {
           data: {
             name: 'Vuong Tru',
             avatars: [
-              {
-                mimetype: 'application/javascript',
-                mime: '',
-                ext: '',
-              },
-              {
-                mimetype: 'application/javascript',
-                mime: '',
-                ext: '',
-              },
+              { mimetype: 'application/javascript' },
+              { mimetype: 'application/javascript' },
             ],
           },
         });
